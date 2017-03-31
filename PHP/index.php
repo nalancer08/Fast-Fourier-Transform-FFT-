@@ -5,8 +5,48 @@
 
 	# Include required files
 	include ABSPATH . '/include/complex.inc.php';
-	//include ABSPATH . '/include/site.inc.php';
+	include ABSPATH . '/include/fft.inc.php';
 
+	/********************************************************************
+	* 							Testing FFT Class                       *
+	********************************************************************/
+	$N = 4;
+	$x = array();
+
+	for ( $i = 0; $i < $N ; $i++ ) { 
+		
+		//$x[] = new Complex(-2*rand() + 1, $i + 1);
+		$x[] = new Complex($i*2, $i + 1);
+	}
+
+	echo "Testing show array of Complex numbers";
+	echo "<br>";
+	FFT::show($x, "x");
+
+	echo "Testing Fast Fourier Tranform = fft()";
+	echo "<br>";
+	$y = FFT::ffta($x);
+	FFT::show($y, "fft(x)");
+
+	echo "Testing Inverse Fast Fourier Transform = ifft()";
+	echo "<br>";
+	$z = FFT::ifft($y);
+	FFT::show($z, "fft(y)");
+
+	echo "Testing Circular Convolution";
+	echo "<br>";
+	$c = FFT::cconvolve($x, $x);
+	FFT::show($c, "c = cconvolve(x, x)");
+
+	echo "Testing Convolution";
+	echo "<br>";
+	$d = FFT::convolve($x, $x);
+	FFT::show($d, "d = convolve(x, x)");
+
+
+	/********************************************************************
+	* 						Testing Complex Class                       *
+	********************************************************************/
 	$complex = new complex(5, 6);
 	$complex2 = new complex(-3, 4);
 
