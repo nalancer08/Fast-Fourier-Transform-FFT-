@@ -10,13 +10,13 @@ Library to calculate Fast Fourier Transform.
 
 I'll try to solve this problem in this languages:
 
-- Java
-  - Java with Processing (for graphic approximation)
-- Java in Android
-- Objective-C in iOs
-- Swit in iOs
-- Python
-- PHP
-- JavaScript
-- C++
-- C# with Unity
+- [X] Java
+  - [] Java with Processing (for graphic approximation)
+- [] Java in Android
+- [] Objective-C in iOs
+- [] Swit in iOs
+- [] Python
+- [X] PHP
+- [] JavaScript
+- [] C++
+- [] C# with Unity
